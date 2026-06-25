@@ -29,7 +29,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(251,146,60,.14)", color: "#fdba74" }}>Sellers</span>
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-sm hidden sm:inline" style={{ color: "var(--soft)" }}>{name}</span>
+          <Link href="/dashboard" className="text-sm hidden sm:inline" style={{ color: "var(--soft)" }}>Businesses</Link>
+          <Link href="/dashboard/messages" className="text-sm hidden sm:inline" style={{ color: "var(--soft)" }}>Messages</Link>
+          <span className="text-sm hidden md:inline" style={{ color: "var(--dim)" }}>{name}</span>
           <button onClick={signOut} className="text-sm" style={{ color: "var(--dim)" }}>Sign out</button>
         </div>
       </header>
