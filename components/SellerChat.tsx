@@ -84,7 +84,7 @@ export default function SellerChat({ inquiryId }: { inquiryId: string }) {
 
   return (
     <div className="rounded-xl border flex flex-col" style={{ background: "var(--panel, #0b0a14)", borderColor: "var(--line)" }}>
-      <div className="max-h-72 overflow-y-auto p-3 space-y-2">
+      <div className="max-h-72 overflow-y-auto p-3 space-y-2" role="log" aria-live="polite" aria-label="Message thread">
         {loading ? (
           <p className="text-xs text-center py-4" style={{ color: "var(--dim)" }}>Loading messages…</p>
         ) : messages.length === 0 ? (
@@ -116,6 +116,7 @@ export default function SellerChat({ inquiryId }: { inquiryId: string }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
+          aria-label="Type a message to the Skyquire team"
           placeholder="Message the Skyquire team…"
           className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
           style={{ background: "rgba(255,255,255,.04)", border: "1px solid var(--line)", color: "var(--soft)" }}
